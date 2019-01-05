@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/img/apple-icon-180x180.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script type="text/javascript">
+        window.addEventListener('scroll', _ => {
+            let navbar = document.querySelector('nav')
+            if (document.documentElement.scrollTop || document.body.scrollTop) {
+                navbar.classList.add('black')
+            } else {
+                navbar.classList.remove('black')
+            }
+        })
+    </script>
+    <title>Portfolio - Raphael Pacheco</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="logo">
+                <img src="./img/vizDevLogo.png" alt="vizDevApp">
+                <span class="logo-name">Raphael<b>Pacheco</b></span>
+            </div>
+            <ul>
+                <li><a href="#nav">Home</a></li>
+                <li><a href="#main">Sobre</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a class="active" href="#">Log In</a></li>
+            </ul>
+        </nav>
+        <section id="nav" class="first-section">
+            <div class="presentation">
+                ANALYTICS<i class="material-icons">insert_chart_outlined</i>
+            </div>
+            <a href="#main" rel=""><div class="pointer"><i class="material-icons">arrow_drop_down_circle</i></div></a>
+        </section>
+        <section id="about" class="content">
+            <div id="main">
+
+                <div id="image">
+                    <img id="image-profile" src="./img/Raphael Pacheco.png" alt="Raphael Pacheco">
+                    <div id="wave"></div>
+                    <div id="wave2"></div>
+                </div>
+                <div id="info">
+                    <div id="viewMore"><i class="material-icons">add</i></div>
+                    <div id="name">RAPHAEL PACHECO</div>
+                    <div id="status">BI ANALYST | FULL STACK DEVELOPER</div>
+                    <div id="social">
+                        <a href="https://www.linkedin.com/in/raphael-pacheco-702a3b49/">
+                            <img class="social" src="./img/linkedin-logo.png" alt="Linkedin">
+                        </a>
+                        <a href="https://github.com/rphpacheco">
+                            <img class="social" src="./img/github.png" alt="Github">
+                        </a>
+                        <a href="https://medium.com/@rphpacheco">
+                            <img class="social" src="./img/medium-size.png" alt="Medium">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCgLtWv7Ck8aFPNISkPm5LsQ?view_as=subscriber">
+                            <img class="social" src="./img/youtube.png" alt="Youtube">
+                        </a>
+                        <a href="https://www.instagram.com/rphpacheco/">
+                            <img class="social" src="./img/instagram-logo.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+                <div id="about-me">
+                    <h2>Sobre mim</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
+                    <div id="close"><i class="material-icons">clear</i></div>
+                </div>
+                <div id="project">
+                    <h2>SKILLS</h2>
+                    <div id="panel">
+                        <div class="skill-img"><img src="./img/node.jpg" alt=""></div>
+                        <div class="skill-title">NodeJs</div>
+                        <div class="skill-description">
+                            <div class="visited"><img src="./img/dark-eye.png" alt="">70</div>
+                            <div class="like"><img src="./img/valentines-heart.png" alt="">98</div>
+                            <div class="visit"><img src="./img/next.png" alt="">68</div>
+                        </div>
+                        <hr size="1" width="80%" color="#CCC">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                })
+            })
+        })
+        particlesJS.load('nav', 'particles.json', _ => {})
+
+         particlesJS.load('main', 'particles.json', _ => {})
+        $(document).ready(function(){
+            $('#viewMore').click(function(){
+                $('#info').animate({top:"600px"})
+                $('#about-me').animate({top:"0px"})
+                $('#image').animate({left:"320px"})
+                $('#project').animate({left:"0px"})
+            })
+            $('#close').click(function(){
+                $('#info').animate({top:"380px"})
+                $('#about-me').animate({top:"-260px"})
+                $('#image').animate({left:"0px"})
+                $('#project').animate({left:"-350px"})
+            })
+        })
+    </script>
+</body>
+
+</html>
